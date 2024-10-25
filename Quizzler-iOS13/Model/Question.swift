@@ -10,11 +10,13 @@ import Foundation
 
 struct Question: Codable {
 	let title: String
-	let answers: String
+	let answers: [String]
+	let correctAnswer: String
 	
-	init(q: String, a: String){
+	init(q: String, a: [String], correctAnswer: String){
 		self.title = q
 		self.answers = a
+		self.correctAnswer = correctAnswer
 	}
 }
 

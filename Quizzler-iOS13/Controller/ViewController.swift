@@ -14,8 +14,9 @@ class ViewController: UIViewController {
 	@IBOutlet weak var progrssBar: UIProgressView!
 	@IBOutlet weak var scoreText: UILabel!
 	
-	@IBOutlet weak var trueBtn: UIButton!
-	@IBOutlet weak var falseBtn: UIButton!
+	@IBOutlet weak var answerBtn1: UIButton!
+	@IBOutlet weak var answerBtn2: UIButton!
+	@IBOutlet weak var answerBtn3: UIButton!
 	
 	var quizBrain = QuizBrain()
 	
@@ -24,6 +25,10 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view.
 		questionLabel.text = quizBrain.getQuestionText()
 		progrssBar.progress = quizBrain.getProcess()
+		
+		answerBtn1.setTitle(quizBrain.getAnswerText(btn: 0), for: .normal)
+		answerBtn2.setTitle(quizBrain.getAnswerText(btn: 1), for: .normal)
+		answerBtn3.setTitle(quizBrain.getAnswerText(btn: 2), for: .normal)
 				
 	}
 	
@@ -49,11 +54,13 @@ class ViewController: UIViewController {
 		progrssBar.progress = quizBrain.getProcess()
 		scoreText.text = "score:\(quizBrain.getScore())"
 		
-		trueBtn.backgroundColor = UIColor.clear
-		falseBtn.backgroundColor = UIColor.clear
+		answerBtn1.setTitle(quizBrain.getAnswerText(btn: 0), for: .normal)
+		answerBtn2.setTitle(quizBrain.getAnswerText(btn: 1), for: .normal)
+		answerBtn3.setTitle(quizBrain.getAnswerText(btn: 2), for: .normal)
 		
+		answerBtn1.backgroundColor = UIColor.clear
+		answerBtn2.backgroundColor = UIColor.clear
+		answerBtn3.backgroundColor = UIColor.clear
 	}
-	
-
 }
 
